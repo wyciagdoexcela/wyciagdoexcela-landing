@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>KonwertujWyciąg.pl - Konwertuj wyciągi bankowe PDF do Excel bezpłatnie</title>
+    <meta name="description" content="Przestań przepisywać transakcje ręcznie! Automatycznie konwertuj wyciągi bankowe z PDF do Excel w 30 sekund. Obsługujemy wszystkie polskie banki - PKO BP, mBank, ING, Santander i inne.">
+    <meta name="keywords" content="konwersja wyciągu bankowego, PDF do Excel, wyciąg bankowy Excel, konwerter wyciągów, PDF Excel, transakcje bankowe, księgowość">
+    <meta name="author" content="KonwertujWyciąg.pl">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="KonwertujWyciąg.pl - Konwertuj wyciągi bankowe PDF do Excel">
+    <meta property="og:description" content="Przestań przepisywać transakcje ręcznie! Automatycznie konwertuj wyciągi bankowe w 30 sekund.">
+    <meta property="og:url" content="https://konwertujwyciag.pl">
+    <meta property="og:image" content="https://konwertujwyciag.pl/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="KonwertujWyciąg.pl - Konwertuj wyciągi bankowe PDF do Excel">
+    <meta name="twitter:description" content="Przestań przepisywać transakcje ręcznie! Automatycznie konwertuj wyciągi bankowe w 30 sekund.">
+    <meta name="twitter:image" content="https://konwertujwyciag.pl/images/og-image.jpg">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "KonwertujWyciąg.pl",
+        "description": "Darmowy konwerter wyciągów bankowych z PDF do Excel",
+        "url": "https://konwertujwyciag.pl",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "PLN"
+        }
+    }
+    </script>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Analytics (placeholder) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> -->
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1 class="logo-text">KonwertujWyciąg.pl</h1>
+                </div>
+                <nav class="nav">
+                    <a href="#jak-dziala" class="nav-link">Jak to działa</a>
+                    <a href="#banki" class="nav-link">Banki</a>
+                    <a href="#faq" class="nav-link">FAQ</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Konwertuj wyciąg bankowy PDF do Excel w 30 sekund</h1>
+                    <p class="hero-subtitle">Przestań przepisywać ręcznie transakcje. Obsługujemy wszystkie polskie banki.</p>
+                </div>
+                
+                <!-- Main Converter Form -->
+                <div class="converter-form-container">
+                    <form class="converter-form" id="converterForm">
+                        <h2 class="form-title">Skonwertuj swój wyciąg teraz</h2>
+                        
+                        <div class="form-group">
+                            <label for="bank" class="form-label">Wybierz swój bank</label>
+                            <select id="bank" name="bank" class="form-select" required>
+                                <option value="">-- Wybierz bank --</option>
+                                <option value="pko-bp">PKO Bank Polski</option>
+                                <option value="mbank">mBank</option>
+                                <option value="ing">ING Bank Śląski</option>
+                                <option value="santander">Santander Bank Polska</option>
+                                <option value="pekao">Bank Pekao</option>
+                                <option value="millennium">Bank Millennium</option>
+                                <option value="alior">Alior Bank</option>
+                                <option value="credit-agricole">Credit Agricole</option>
+                                <option value="bnp-paribas">BNP Paribas</option>
+                                <option value="nest">Nest Bank</option>
+                                <option value="other">Inny bank</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="file" class="form-label">Wyciąg bankowy (PDF)</label>
+                            <div class="file-upload-area" id="fileUploadArea">
+                                <input type="file" id="file" name="file" accept=".pdf" class="file-input" required>
+                                <div class="file-upload-content">
+                                    <div class="upload-icon">📄</div>
+                                    <p class="upload-text">Przeciągnij plik PDF tutaj lub <span class="upload-link">kliknij aby wybrać</span></p>
+                                    <p class="upload-info">Maksymalny rozmiar: 10MB</p>
+                                </div>
+                                <div class="file-selected" id="fileSelected" style="display: none;">
+                                    <span class="file-name" id="fileName"></span>
+                                    <button type="button" class="file-remove" id="fileRemove">×</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Twój adres email</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="np. jan@firma.pl" required>
+                        </div>
+                        
+                        <button type="submit" class="cta-button" id="convertButton">
+                            <span class="button-text">KONWERTUJ BEZPŁATNIE</span>
+                            <span class="button-loading" style="display: none;">⏳ Przetwarzanie...</span>
+                        </button>
+                        
+                        <div class="form-benefits">
+                            <span class="benefit">✅ Bezpieczne</span>
+                            <span class="benefit">✅ Darmowe</span>
+                            <span class="benefit">✅ Bez rejestracji</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section" id="problem">
+        <div class="container">
+            <h2 class="section-title">Ile razy już przepisywałeś wyciągi ręcznie?</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">🕐</div>
+                    <h3 class="problem-title">Godziny przepisywania transakcji</h3>
+                    <p class="problem-description">Każdy wyciąg to dziesiątki transakcji do ręcznego przepisania. To frustrujące i czasochłonne.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">❌</div>
+                    <h3 class="problem-title">Błędy w przepisanych kwotach</h3>
+                    <p class="problem-description">Jedna pomyłka w kwocie może zepsuć całą księgowość. Ręczne przepisywanie zwiększa ryzyko błędów.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">😤</div>
+                    <h3 class="problem-title">Bank daje tylko PDF, a księgowa potrzebuje Excel</h3>
+                    <p class="problem-description">Banki udostępniają wyciągi w PDF, ale programy księgowe wymagają Excel. To absurd!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="jak-dziala">
+        <div class="container">
+            <h2 class="section-title">3 proste kroki do gotowego pliku Excel</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">📎</div>
+                    <h3 class="step-title">Wybierz bank i wgraj PDF</h3>
+                    <p class="step-description">Wybierz swój bank z listy i przeciągnij plik PDF wyciągu z bankowości elektronicznej.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">⚡</div>
+                    <h3 class="step-title">Automatyczna konwersja</h3>
+                    <p class="step-description">Nasz system automatycznie rozpoznaje i konwertuje wszystkie transakcje do formatu Excel.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">📧</div>
+                    <h3 class="step-title">Otrzymaj Excel na email</h3>
+                    <p class="step-description">W ciągu 2 minut otrzymasz gotowy plik Excel z wszystkimi transakcjami.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience Section -->
+    <section class="target-audience">
+        <div class="container">
+            <h2 class="section-title">Idealne dla</h2>
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <div class="audience-icon">👨‍💼</div>
+                    <h3 class="audience-title">Właściciele małych firm</h3>
+                    <p class="audience-description">Zaoszczędź czas na księgowości i skup się na rozwoju biznesu.</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">📊</div>
+                    <h3 class="audience-title">Freelancerzy i JDG</h3>
+                    <p class="audience-description">Szybko przygotuj dokumenty dla księgowej lub do rozliczenia z ZUS.</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">🏢</div>
+                    <h3 class="audience-title">Biura rachunkowe</h3>
+                    <p class="audience-description">Przyspiesz pracę dla klientów i zredukuj błędy w przepisywaniu.</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">👵</div>
+                    <h3 class="audience-title">Osoby prywatne</h3>
+                    <p class="audience-description">Uporządkuj budżet domowy lub przygotuj dokumenty do wniosku kredytowego.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supported Banks Section -->
+    <section class="supported-banks" id="banki">
+        <div class="container">
+            <h2 class="section-title">Współpracujemy z bankami</h2>
+            <div class="banks-grid">
+                <div class="bank-logo">PKO BP</div>
+                <div class="bank-logo">mBank</div>
+                <div class="bank-logo">ING</div>
+                <div class="bank-logo">Santander</div>
+                <div class="bank-logo">Pekao</div>
+                <div class="bank-logo">Millennium</div>
+                <div class="bank-logo">Alior</div>
+                <div class="bank-logo">Credit Agricole</div>
+            </div>
+            <p class="banks-info">Nie ma Twojego banku? <a href="#converterForm" class="inline-link">Napisz do nas</a> - dodamy go!</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <h2 class="section-title">Najczęściej zadawane pytania</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3 class="faq-question">Czy to bezpieczne?</h3>
+                    <p class="faq-answer">Tak! Nie przechowujemy Twoich danych bankowych. Plik jest przetwarzany automatycznie i natychmiast usuwany po konwersji.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Ile to kosztuje?</h3>
+                    <p class="faq-answer">Konwersja jest całkowicie darmowa. Bez ukrytych kosztów, bez abonamentów, bez rejestracji.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Jakie formaty obsługujecie?</h3>
+                    <p class="faq-answer">Obsługujemy pliki PDF z bankowości elektronicznej wszystkich popularnych banków w Polsce.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Jak długo trwa konwersja?</h3>
+                    <p class="faq-answer">Konwersja zajmuje maksymalnie 2 minuty. Plik Excel otrzymasz na podany adres email.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Co jeśli mój bank nie jest obsługiwany?</h3>
+                    <p class="faq-answer">Stale dodajemy nowe banki. Prześlij nam swój wyciąg, a dodamy obsługę Twojego banku priorytetowo.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Czy działa na telefonie?</h3>
+                    <p class="faq-answer">Tak! Strona działa na wszystkich urządzeniach - komputerze, tablecie i telefonie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Second CTA Section -->
+    <section class="second-cta">
+        <div class="container">
+            <h2 class="section-title">Skonwertuj swój wyciąg teraz</h2>
+            <p class="section-subtitle">Koniec z frustrującym przepisywaniem kwot i dat. Skonwertuj swój wyciąg w 30 sekund.</p>
+            <a href="#hero" class="cta-button secondary">KONWERTUJ BEZPŁATNIE</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">KonwertujWyciąg.pl</h3>
+                    <p class="footer-description">Darmowy konwerter wyciągów bankowych z PDF do Excel.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Linki</h4>
+                    <ul class="footer-links">
+                        <li><a href="#jak-dziala">Jak to działa</a></li>
+                        <li><a href="#banki">Obsługiwane banki</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Prawne</h4>
+                    <ul class="footer-links">
+                        <li><a href="#privacy">Polityka prywatności</a></li>
+                        <li><a href="#terms">Regulamin</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 KonwertujWyciąg.pl. Wszystkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success/Error Modals -->
+    <div class="modal" id="successModal" style="display: none;">
+        <div class="modal-content">
+            <span class="modal-close" id="closeSuccess">&times;</span>
+            <h3>Dziękujemy za zainteresowanie!</h3>
+            <p>Twój bank będzie wkrótce obsługiwany. Powiadomimy Cię email gdy będzie gotowy.</p>
+            <p><strong>Zapisaliśmy Cię na listę priorytetowych powiadomień.</strong></p>
+        </div>
+    </div>
+
+    <div class="modal" id="errorModal" style="display: none;">
+        <div class="modal-content">
+            <span class="modal-close" id="closeError">&times;</span>
+            <h3>Ups! Coś poszło nie tak</h3>
+            <p>Spróbuj ponownie za chwilę lub skontaktuj się z nami.</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html> 
