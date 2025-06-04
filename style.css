@@ -320,7 +320,7 @@ body {
 /* Problem Section */
 .problem-section {
     padding: 80px 0;
-    background: white;
+    background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
 }
 
 .problem-grid {
@@ -333,14 +333,15 @@ body {
     text-align: center;
     padding: 2rem;
     border-radius: 16px;
-    background: #F8FAFC;
-    border: 1px solid #E2E8F0;
+    background: white;
+    border: 1px solid rgba(59, 130, 246, 0.1);
     transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
 }
 
 .problem-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 50px rgba(59, 130, 246, 0.15);
 }
 
 .problem-icon {
@@ -363,7 +364,7 @@ body {
 /* How It Works Section */
 .how-it-works {
     padding: 80px 0;
-    background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+    background: white;
 }
 
 .steps-grid {
@@ -375,16 +376,16 @@ body {
 .step-card {
     text-align: center;
     padding: 2rem;
-    background: white;
+    background: #F8FAFC;
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+    border: 1px solid #E2E8F0;
     position: relative;
     transition: all 0.3s ease;
 }
 
 .step-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 50px rgba(59, 130, 246, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
 .step-number {
@@ -488,6 +489,17 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+}
+
+.bank-logo img {
+    max-width: 100%;
+    max-height: 50px;
+    height: auto;
+    object-fit: contain;
 }
 
 .bank-logo:hover {
